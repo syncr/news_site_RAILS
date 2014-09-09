@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: hackernews_development
+
+test:
+  adapter: postgresql
+  database: hackernews_test
