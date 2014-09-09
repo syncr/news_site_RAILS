@@ -1,0 +1,15 @@
+<h1>Create a new link!</h1>
+
+<%= form_for(@link) do |f| %>
+  <div class="form-group">
+    <%= f.label :headline %>
+    <%= f.text_field :headline %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, placeholder: "www.nytimes.com"%>
+  </div>
+  <%= f.submit(class: "btn btn-primary") %>
+<% end %>
+
+

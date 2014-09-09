@@ -17,9 +17,9 @@ class LinksController < ApplicationController
     end
   end
 
-  def show
-    @link= Link.find(params[:id])
-  end
+  # def show
+  #   @link= Link.find(params[:id])
+  # end
 
   def edit
     @link = Link.find(params[:id])

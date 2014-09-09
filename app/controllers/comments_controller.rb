@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @link = Link.find(params[:link_id])
+    @comments = Comment.where("link_id = ?", params[:link_id])
   end
 
   def new
