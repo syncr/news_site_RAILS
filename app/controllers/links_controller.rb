@@ -6,4 +6,40 @@ class LinksController < ApplicationController
   def new
     @link = Link.new
   end
+
+  def create
+    @link = Link.new(params[:link])
+    if @link.save
+      flash[:notice] = "Link Created"
+      redirect_to('/links')
+    else
+      render('index')
+    end
+  end
+
+  def show
+    @link= Link.find(params[:id])
+  end
+
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    @link =link.find(params[:id])
+    if @link.update(params[:link])
+      flash[:notice]= "Link updated"
+      redirect_to('/links/#{link.id}')
+    else
+      render('edit')
+    end
+  end
+
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    flash[:alert]="Link Deleted"
+    redirect_to('/links')
+  end
+
 end

@@ -1,0 +1,8 @@
+<h1>hAcKEr N00z</h1>
+
+<ol>
+  <% Link.all.each do |link| %>
+    <li><%= link_to "#{link.headline}", "http://#{link.url}" %></li>
+    <p><%= link_to "Comments", link_comments_path(link.id) %></p>
+  <% end %>
+</ol>
