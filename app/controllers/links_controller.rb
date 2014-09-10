@@ -5,11 +5,13 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
+    @links = Link.all
   end
 
   def create
     @user = User.new(params[:user])
     @link = Link.new(params[:link])
+    @links = Link.all
     if @link.save
       flash[:notice] = "Link Created"
       redirect_to('/links')
