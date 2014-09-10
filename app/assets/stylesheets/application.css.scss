@@ -12,6 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ //= require foundation_and_overrides
+
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+.modal-style {
+  opacity: 1;
+  visibility: hidden;
+  display: none;
+}
+
+li {
+  list-style: none;
+}

@@ -2,8 +2,7 @@
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div class="error_message">
-      <h2>From is invalid</h2>
+      <div data-alert class="alert-box">Your submission has problemz...</div>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>

@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @user = User.new(params[:user])
     @link = Link.find(params[:link_id])
     @comment = Comment.new({params[:comment]})
-    foo
     if @comment.save
       flash[:notice] = "Comment Created"
       redirect_to("/links/#{@link.id}/comments")

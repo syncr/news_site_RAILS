@@ -8,6 +8,7 @@ class LinksController < ApplicationController
   end
 
   def create
+    @user = User.new(params[:user])
     @link = Link.new(params[:link])
     if @link.save
       flash[:notice] = "Link Created"
