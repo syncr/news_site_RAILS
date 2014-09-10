@@ -1,5 +1,6 @@
 <%= form_for [@link, @comment] do |f| %>
   <div class="form-group">
+    <%= f.hidden_field :link_id, :value => @link.id %>
     <%= f.label "Add a Comment" %>
     <%= f.text_area :content, :id => "content_comment"  %>
   </div>
