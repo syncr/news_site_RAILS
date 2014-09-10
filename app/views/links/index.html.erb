@@ -19,7 +19,7 @@
           <div class="large-8 columns">
             <div class="row">
               <% Link.all.each do |link| %>
-                <div class="large-4 small-6 columns">
+                <div class="large-6 small-6 columns">
                   <img src="http://placehold.it/1000x1000&amp;text=Thumbnail">
                    <div class="panel">
                     <h5>
@@ -32,73 +32,7 @@
                 </div>
               <% end %>
 
-              <div class="large-4 small-6 columns">
-                <img src="http://placehold.it/1000x1000&amp;text=Thumbnail">
-                <div class="panel">
-                  <h5>
-                    Test1
-                  </h5>
-                  <h6 class="subheader">
-                    $000.00
-                  </h6>
-                </div>
-              </div>
-              <div class="large-4 small-6 columns">
-                <img src="http://placehold.it/500x500&amp;text=Thumbnail">
-                <div class="panel">
-                  <h5>
-                    Test2
-                  </h5>
-                  <h6 class="subheader">
-                    $000.00
-                  </h6>
-                </div>
-              </div>
-              <div class="large-4 small-6 columns">
-                <img src="http://placehold.it/500x500&amp;text=Thumbnail">
-                <div class="panel">
-                  <h5>
-                    Test3
-                  </h5>
-                  <h6 class="subheader">
-                    $000.00
-                  </h6>
-                </div>
-              </div>
-              <div class="large-4 small-6 columns">
-                <img src="http://placehold.it/500x500&amp;text=Thumbnail">
-                <div class="panel">
-                  <h5>
-                    Item Name
-                  </h5>
-                  <h6 class="subheader">
-                    $000.00
-                  </h6>
-                </div>
-              </div>
-              <div class="large-4 small-6 columns">
-                <img src="http://placehold.it/500x500&amp;text=Thumbnail">
-                <div class="panel">
-                  <h5>
-                    Item Name
-                  </h5>
-                  <h6 class="subheader">
-                    $000.00
-                  </h6>
-                </div>
-              </div>
-              <div class="large-4 small-6 columns">
-                <img src="http://placehold.it/500x500&amp;text=Thumbnail">
-                <div class="panel">
-                  <h5>
-                    Item Name
-                  </h5>
-                  <h6 class="subheader">
-                    $000.00
-                  </h6>
-                </div>
-              </div>
-            </div>
+
             <div class="row">
               <div class="large-12 columns">
                 <div class="panel">
@@ -149,12 +83,3 @@
     </div>
   </body>
 </html>
-
-
-
-<ol>
-  <% Link.all.each do |link| %>
-    <li><%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %></li>
-    <p><%= link_to "Comments", link_comments_path(link.id)%></p>
-  <% end %>
-</ol>
