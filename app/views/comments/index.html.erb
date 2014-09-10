@@ -1,5 +1,7 @@
 <h1>Comments for <%= @link.headline %></h1>
 
+<%= render 'form'%>
+
 <% @comments.each do |comment| %>
   <p><%= comment.content %></p>
 <% end %>
