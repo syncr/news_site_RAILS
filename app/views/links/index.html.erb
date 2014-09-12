@@ -1,5 +1,4 @@
-
-<div class="row">
+        <div class="row">
           <div class="large-4 small-12 columns">
             <img src="assets/kitteh.png">
             <div class="hide-for-small panel">
@@ -9,28 +8,30 @@
               <h5 class="subheader">
                 A great place to find the latest news for nerds
               </h5>
-            </div><a href="#">
+            </div>
             <div class="panel callout radius">
-              <h6>
-                99&nbsp; items in your cart
-              </h6>
+              <h5 class = 'text-center'>
+                <a href = '/links/new'>Submit a new story</a>
+              </h5>
             </div></a>
           </div>
-          <div class="large-8 columns">
-            <div class="row">
-              <% Link.all.each do |link| %>
-                <div class="large-6 small-6 columns">
-                  <img src="http://placehold.it/1000x1000&amp;text=Thumbnail">
-                   <div class="panel">
-                    <h5>
-                      <%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %>
-                    </h5>
-                    <h6 class="subheader">
-                      <%= link_to "Comments", link_comments_path(link.id)%>
-                    </h6>
-                  </div>
-                </div>
-              <% end %>
+          <div class="large-8 columns comment-margin">
+            <% Link.all.each do |link| %>
+              <img class = "large-2 small-2 column comment-image" src="http://placekitten.com/g/108/108">
+              <div class="panel comment-panel large-9 small-9 column">
+                <h5><%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %></h5>
+                <!-- <div class='comment-bottom'> -->
+                  <h6 class="subheader comment-link">
+                    <%= link_to "Comments", link_comments_path(link.id)%>
+                  </h6>
+              </div>
+              <div class="vote-icons large-1 small-1 column">
+                <svg class="icon upArrow inactive" viewBox="0 0 44 44"><use xlink:href="#upArrow"></use></svg>
+                <svg class="icon downArrow inactive" viewBox="0 0 44 44"><use xlink:href="#downArrow"></use></svg>
+              </div>
+            <% end %>
+          </div>
+        </div>
 
 
             <div class="row">

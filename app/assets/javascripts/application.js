@@ -17,3 +17,9 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$('.icon').click(function() {
+    $(this).toggleClass('active');
+    $(this).toggleClass('inactive');
+});
+
+
