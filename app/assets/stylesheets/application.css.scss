@@ -16,36 +16,51 @@
 
  */
 @import 'foundation_and_overrides';
+@import url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css);
+
+
 
 $body-font-family: 'Ubuntu', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
-$placekitten: 108px;
+$placekitten: 130px;
+$blue: #2864A2;
+$green: #1fa67a;
+$yellow: #F9A82F;
+$orange: #F9732F;
+$red: #ED4F74;
+
+#metaheader {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  height: $placekitten;
+  width: 100%;
+  color: green;
+}
 
 .top-bar ul li h1 a{
-  margin-top:.3em;
-  font-size: 4em;
+  margin-top:.4em;
+  font-size: 5.5em;
 }
 
 .top-bar {
+  width:100%;
   height: $placekitten;
-  background: #79BD9A;
+  background: $green;
+  background-image:url('otis-redding.png'); ;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button){
-  background: #79BD9A;
+  background: $green;
+  background-image:url('otis-redding.png'); ;
+  font-size: 1em;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background: #A8DBA8;
-  border: #A8DBA8;
-  // border-left: #509471;
-  // border-bottom: #509471;
-  border-width: 4px;
+  background: #1b926c;
+  background-image:url('otis-redding.png'); ;
 }
 
-.body {
-  font-family: $body-font-family;
-}
 .panel {
   border: 1px solid #ddd;
 }
@@ -53,6 +68,10 @@ $placekitten: 108px;
   opacity: 1;
   visibility: hidden;
   display: none;
+}
+
+.name {
+  text-shadow: 3px 2px 0px $green, 7px 5px 0px rgba(0, 0, 0, 0.15);
 }
 
 li {
@@ -66,14 +85,13 @@ textarea#content_comment {
   padding-bottom: 10px;
 }
 
-
 .comment-image {
   padding: 0;
-
+  margin: 0;
 }
 
 .comment-margin {
-  padding-left: 5px;
+  padding: 0 15px 0 5px
 }
 
 .comment-panel {
@@ -82,7 +100,8 @@ textarea#content_comment {
 }
 
 .comment-link a {
-  position:relative;
+  position:absolute;
+  bottom: 10px;
   border: 1px solid #ccc;
   padding: 0 5px;
   border-radius: 5px;
@@ -91,7 +110,8 @@ textarea#content_comment {
 }
 
 .comment-link a:hover {
-  position:relative;
+  position:absolute;
+  bottom: 10px;
   border: 1px solid #ccc;
   padding: 0 5px;
   border-radius: 5px;
@@ -104,6 +124,18 @@ textarea#content_comment {
   background-color: purple;
 }
 
+.vote-container {
+  background:lightblue;
+  height: 4em;
+  margin:0;
+  padding:0;
+}
+
+/*.vote-counter {
+  margin:0;
+  padding:0;
+}*/
+
 .vote-icons {
   background: #ecfaff;
   display: block;
@@ -114,39 +146,21 @@ textarea#content_comment {
 }
 
 .icon{
-  margin: 5px;
-  fill: #008cba;
-  height: 44px;
-  width: 44px;
-}
-
-.icon.upArrow:hover{
-  fill: #79BD9A;
+  color: #ccc;
+  font-size: 1.1em;
   cursor: pointer;
-  background: #B2E4B5;
-  border-radius: 50%;
-
+  margin: 9px 8px 8px 11px;
 }
 
-.icon.downArrow:hover{
-  fill: #Ba423f;
-  cursor: pointer;
-  background: #FFA6A3;
-  border-radius: 50%;
-
+.up.active{
+  color: $green;
 }
 
-.upArrow-active{
-  fill: #79BD9A;
-  cursor: pointer;
-  background: #B2E4B5;
-  border-radius: 50%;
-
+.down.active{
+  color: $red;
 }
 
-.downArrow-active{
-  fill: #Ba423f;
-  cursor: pointer;
-  background: #FFA6A3;
-  border-radius: 50%;
+.icon:hover{
+  color: #bbb;
 }
+

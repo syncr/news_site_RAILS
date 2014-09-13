@@ -17,41 +17,49 @@
           </div>
           <div class="large-8 columns comment-margin">
             <% Link.all.each do |link| %>
-              <img class = "large-2 small-2 column comment-image" src="http://placekitten.com/g/108/108">
-              <div class="panel comment-panel large-9 small-9 column">
-                <h5><%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %></h5>
-                <!-- <div class='comment-bottom'> -->
+              <div>
+                <img class = "large-2 small-2 column comment-image" src="http://placekitten.com/g/130/130">
+                <div class="panel comment-panel large-9 small-9 column">
+                  <h5>
+                    <%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %>
+                  </h5>
                   <h6 class="subheader comment-link">
                     <%= link_to "Comments", link_comments_path(link.id)%>
                   </h6>
-              </div>
-              <div class="vote-icons large-1 small-1 column">
-                <svg class="icon upArrow inactive" viewBox="0 0 44 44"><use xlink:href="#upArrow"></use></svg>
-                <svg class="icon downArrow inactive" viewBox="0 0 44 44"><use xlink:href="#downArrow"></use></svg>
+                <div class="vote-container large-2 small-2 column"></div>
+                </div>
+
+<!--
+ -->
+                <div class="vote-icons large-1 small-1 column">
+                   <i class="icon up fa fa-chevron-circle-up fa-3x"></i>
+                   <i class="icon down fa fa-chevron-circle-down fa-3x"></i>
+                </div>
               </div>
             <% end %>
           </div>
         </div>
 
 
-            <div class="row">
-              <div class="large-12 columns">
-                <div class="panel">
-                  <div class="row">
-                    <div class="large-2 small-6 columns">
-                      <img src="http://placehold.it/300x300&amp;text=Site%20Owner">
-                    </div>
-                    <div class="large-10 small-6 columns">
-                      <strong>This Site Is Managed By</strong>
-                      <hr>
-                      Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis
-                    </div>
-                  </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="panel">
+              <div class="row">
+                <div class="large-2 small-6 columns">
+                  <img src="http://placehold.it/300x300&amp;text=Site%20Owner">
+                </div>
+                <div class="large-10 small-6 columns">
+                  <strong>This Site Is Managed By</strong>
+                  <hr>
+                  Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <footer class="row">
           <div class="large-12 columns">
             <hr>
