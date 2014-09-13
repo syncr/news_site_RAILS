@@ -1,45 +1,43 @@
         <div class="row">
-          <div class="large-4 small-12 columns">
-            <img src="assets/kitteh.png">
-            <div class="hide-for-small panel">
-              <h3>
-                KittenNewz
-              </h3>
-              <h5 class="subheader">
-                A great place to find the latest news for nerds
-              </h5>
-            </div>
-            <div class="panel callout radius">
+          <div class="large-2 small-12 columns no-left-padding">
+            <div class="panel callout">
               <h5 class = 'text-center'>
                 <a href = '/links/new'>Submit a new story</a>
               </h5>
-            </div></a>
+            </div>
           </div>
-          <div class="large-8 columns comment-margin">
-            <% Link.all.each do |link| %>
-              <div>
-                <img class = "large-2 small-2 column comment-image" src="http://placekitten.com/g/130/130">
-                <div class="panel comment-panel large-9 small-9 column">
-                  <h5>
-                    <%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %>
-                  </h5>
-                  <h6 class="subheader comment-link">
-                    <%= link_to "Comments", link_comments_path(link.id)%>
-                  </h6>
-                <div class="vote-container large-2 small-2 column"></div>
-                </div>
+          <% Link.all.each do |link| %>
 
-<!--
- -->
-                <div class="vote-icons large-1 small-1 column">
-                   <i class="icon up fa fa-chevron-circle-up fa-3x"></i>
-                   <i class="icon down fa fa-chevron-circle-down fa-3x"></i>
-                </div>
+          <div class="large-offset-2 large-10 columns comment-margin no-right-padding comment-row panel ">
+            
+              <div class="vote-icons large-1 small-1 column">
+                 <i class="icon vote up fa fa-chevron-circle-up fa-2x"></i>
+                 <i class="icon vote down fa fa-chevron-circle-down fa-2x"></i>
               </div>
-            <% end %>
-          </div>
-        </div>
 
+              <div class="column-container large-1 small-1 column">
+                 <div class="vote-counter">1123</div>
+              </div>
+              <img class="large-1 small-1 column comment-image" src="http://placekitten.com/g/82/82">
+
+              <div class="comment-panel large-8 small-8 column">
+                <h5>
+                  <%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %>
+                </h5>
+                <h6 class="subheader comment-time">
+                  <%= link_to "Time goes here", link_comments_path(link.id)%>
+                </h6>
+              </div>
+              <div class="column-container large-1 small-1 column">
+                 <i class="icon comment up fa fa-comment-o fa-2x"></i>
+                 <div class="comment-counter">321</div>
+              </div>
+            
+           
+            
+          </div>
+          <% end %>
+        </div>
 
 
         <div class="row">
