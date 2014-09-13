@@ -13,7 +13,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    
+
       <div class="large-12 columns">
         <div class="row">
           <nav class="top-bar" data-topbar="">
@@ -29,27 +29,38 @@
             </ul>
             <section class="top-bar-section">
               <ul class="right">
-                <li> <%= link_to "Sign Up", new_user_path %>
-<!--                <a href="#" data-reveal-id="signupModal">SignUp</a>
-                  <div id="signupModal" class="reveal-modal modal-style" data-reveal>
-                     render partial:"/users/sign_up"
-                    <a class="close-reveal-modal">×</a>
-                  </div>-->
-                </li>
-                <li>
-                  <%= link_to "Log In", new_session_path %>
-                </li>
+                <% if current_user %>
+                    <div class='user-info'>
+                        <ul>
+                          <li><i class="icon comment up fa fa-user fa-1x"></i><%= current_user.email %></li>
+                          <li><i class="icon comment up fa fa-sign-out fa-1x"></i></li>
+
+                    </div>
+                  <% else %>
+                  <li> <%= link_to "Sign Up", new_user_path %>
+  <!--                <a href="#" data-reveal-id="signupModal">SignUp</a>
+                    <div id="signupModal" class="reveal-modal modal-style" data-reveal>
+                       render partial:"/users/sign_up"
+                      <a class="close-reveal-modal">×</a>
+                    </div>-->
+                  </li>
+                  <li><%= link_to "Log In", new_session_path %></li>
+                <% end %>
               </ul>
             </section>
           </nav>
+        <div id='flash_alert'>
+          <%= render("/layouts/flash_alerts") %>
         </div>
-      
-    
+      </div>
+
+
 
 
     <%= yield %>
+
+
     <%= javascript_include_tag "application" %>
   </body>
-
 </html>
 

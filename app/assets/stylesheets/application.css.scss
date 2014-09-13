@@ -28,6 +28,9 @@ $green: #1fa67a;
 $yellow: #F9A82F;
 $orange: #F9732F;
 $red: #ED4F74;
+$topbar-bg-color: $green;
+
+
 
 .top-bar ul li h1 a{
   margin-top:.4em;
@@ -37,6 +40,17 @@ $red: #ED4F74;
 .top-bar {
   width:100%;
   height: $placekitten*1.5;
+  background: $green;
+  background-image:url('otis-redding.png'); ;
+}
+
+.top-bar-section ul {
+  background: $green;
+  background-image:url('otis-redding.png'); ;
+
+}
+
+ul .right {
   background: $green;
   background-image:url('otis-redding.png'); ;
 }
@@ -97,7 +111,7 @@ textarea#content_comment {
   padding: 0;
   margin: 0;
   border: 5px solid rgb(242, 242, 242);
-  
+
 }
 
 .comment-container {
@@ -188,7 +202,7 @@ textarea#content_comment {
 
 .vote-icons .icon {
   text-align: center;
-  display: block; 
+  display: block;
 }
 
 .column-container .icon {
@@ -199,11 +213,12 @@ textarea#content_comment {
 }
 
 .vote-counter {
-  background: #ccc;
+  background: #eee;
+  border: 1px solid #ccc;
   border-radius: 3px;
   padding: 1em 3px;
   margin: 1em;
-  color: $blue;
+  color: $orange;
   text-align: center;
 }
 
@@ -229,3 +244,14 @@ textarea#content_comment {
   color: #bbb;
 }
 
+#flash_alert {
+  position: absolute;
+  z-index: 100;
+  top: 138px;
+  right: 2em;
+  width: 200px;
+}
+.user-info {
+  color: white;
+  padding-right:10px;
+}
