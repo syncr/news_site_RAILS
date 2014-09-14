@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def index
     @link = Link.find(params[:link_id])
     @comment = Comment.new({link_id: params[:link_id]})
-    @comments = Comment.where("link_id = ?", params[:link_id])
+    @comments = @link.comments
     render 'index'
   end
 
@@ -12,10 +12,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
     @link = Link.find(params[:link_id])
-    @comment = Comment.new(params[:comment])
-    @comments = Comment.all
+    @comment = current_user.comments.new(comment_params)
+    @comments = @link.comments
+    dsfsdf
     if @comment.save
       flash[:notice] = "Comment Created"
       redirect_to("/links/#{@link.id}/comments")
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update(params[:comment])
+    if @comment.update(comment_params)
       flash[:notice] = "Comment Updated"
       redirect_to comment_path(@comment)
     else
@@ -39,5 +39,11 @@ class CommentsController < ApplicationController
     @comment.destroy
     flash[:notice] = "Comment deleted"
     redirect_to comments_path
+  end
+
+private
+
+  def comment_params
+    params.require(:comment).permit(:content, :link_id)
   end
 end
