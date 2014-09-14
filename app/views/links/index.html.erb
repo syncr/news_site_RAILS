@@ -29,7 +29,8 @@
                 </h6>
               </div>
               <div class="column-container large-1 small-1 column">
-                 <i class="icon comment up fa fa-comment-o fa-2x"></i>
+                <%= link_to '<i class="icon comment up fa fa-comment-o fa-2x"></i>'.html_safe, link_comments_path(link.id)%>
+
                  <div class="comment-counter">321</div>
               </div>
 
