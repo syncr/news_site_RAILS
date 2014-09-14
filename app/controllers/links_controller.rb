@@ -9,8 +9,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    @link = Link.new(params[:link])
+    @link = current_user.links.new(link_params)
     @links = Link.all
     if @link.save
       flash[:notice] = "Link Created"
@@ -30,7 +29,7 @@ class LinksController < ApplicationController
 
   def update
     @link =link.find(params[:id])
-    if @link.update(params[:link])
+    if @link.update(link_params)
       flash[:notice]= "Link updated"
       redirect_to('/links/#{link.id}')
     else
@@ -45,4 +44,9 @@ class LinksController < ApplicationController
     redirect_to('/links')
   end
 
+private
+
+  def link_params
+    params.require(:link).permit(:url, :headline)
+  end
 end
