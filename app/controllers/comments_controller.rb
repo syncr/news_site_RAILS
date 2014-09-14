@@ -23,4 +23,21 @@ class CommentsController < ApplicationController
       render('index')
     end
   end
+
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(params[:comment])
+      flash[:notice] = "Comment Updated"
+      redirect_to comment_path(@comment)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash[:notice] = "Comment deleted"
+    redirect_to comments_path
+  end
 end
