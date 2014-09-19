@@ -81,8 +81,13 @@ ul .right {
 
 .panel {
   border: 1px solid #ddd;
-  margin:0 0 20px 0;
+  margin:0 0 15px 0;
   padding:0;
+}
+
+.panel_callout {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .panel img {
@@ -129,7 +134,7 @@ textarea#content_comment {
 }
 
 .comment-container {
-  margin-bottom: 20px !important;
+  margin-bottom: 10px !important;
   display: block;
   content: '';
 }
@@ -141,7 +146,7 @@ textarea#content_comment {
 
 .comment-panel {
   height: $placekitten;
-  padding: .75rem;
+  padding: .5rem;
   background: none;
   border: none;
 }
