@@ -2,7 +2,22 @@
   <% if flash[:notice] == "Account created." %>
     <div data-alert class="alert-box success radius">
       <%= flash[:notice] %>
-    <a href="#" class="close">&times;</a>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% elsif flash[:notice] == "Logged in!" %>
+    <div data-alert class="alert-box success radius">
+      <%= flash[:notice] %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% elsif flash[:notice] == "Sorry, you must log in to post new content. Please create an account or login." %>
+    <div data-alert class="alert-box alert radius">
+      <%= flash[:notice] %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% elsif flash[:notice] == "Successfully logged out!" %>
+  <div data-alert class="alert-box success radius">
+      <%= flash[:notice] %>
+      <a href="#" class="close">&times;</a>
     </div>
   <% end %>
 </div>

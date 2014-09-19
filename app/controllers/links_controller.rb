@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  before_filter :authorize, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @links = Link.all
   end
@@ -9,8 +11,9 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = current_user.links.new(link_params)
     @links = Link.all
+    @link = current_user.links.new(link_params)
+
     if @link.save
       flash[:notice] = "Link Created"
       redirect_to('/links')
