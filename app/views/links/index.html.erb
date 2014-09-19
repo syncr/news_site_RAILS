@@ -8,7 +8,7 @@
           </div>
           <% Link.all.each do |link| %>
 
-          <div class="large-offset-2 large-10 columns comment-margin no-right-padding comment-row panel ">
+            <div class="large-offset-2 large-10 columns comment-margin no-right-padding comment-row panel">
 
               <div class="vote-icons large-1 small-1 column">
                  <i class="icon vote up fa fa-chevron-circle-up fa-2x"></i>
@@ -30,16 +30,10 @@
               </div>
               <div class="column-container large-1 small-1 column">
                 <%= link_to '<i class="icon comment up fa fa-comment-o fa-2x"></i>'.html_safe, link_comments_path(link.id)%>
-
                  <div class="comment-counter">321</div>
               </div>
-
-
-
           </div>
           <% end %>
-        </div>
-
 
         <div class="row">
           <div class="large-12 columns">
@@ -59,35 +53,3 @@
         </div>
       </div>
     </div>
-        <footer class="row">
-          <div class="large-12 columns">
-            <hr>
-            <div class="row">
-              <div class="large-6 columns">
-                <p>
-                  © Copyright no one at all. Go to town.
-                </p>
-              </div>
-              <div class="large-6 columns">
-                <ul class="inline-list right">
-                  <li>
-                    <a href="#">Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#">Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#">Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#">Link 4</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </body>
-</html>

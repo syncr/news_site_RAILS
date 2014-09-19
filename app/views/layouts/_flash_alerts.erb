@@ -4,6 +4,11 @@
       <%= flash[:notice] %>
       <a href="#" class="close">&times;</a>
     </div>
+  <% elsif flash[:notice] == "Email or password is not recognized. Please try again." %>
+    <div data-alert class="alert-box alert radius">
+      <%= flash[:notice] %>
+      <a href="#" class="close">&times;</a>
+    </div>
   <% elsif flash[:notice] == "Logged in!" %>
     <div data-alert class="alert-box success radius">
       <%= flash[:notice] %>
