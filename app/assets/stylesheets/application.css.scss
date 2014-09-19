@@ -20,6 +20,7 @@
 $body-font-family: 'Ubuntu', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
 $placekitten: 82px;
+$story-button: 82px+10px;
 $blue: #2864A2;
 $green: #1fa67a;
 $yellow: #F9A82F;
@@ -27,7 +28,18 @@ $orange: #F9732F;
 $red: #ED4F74;
 $topbar-bg-color: $green;
 
+.success {
+  background: $green;
+}
 
+.warning {
+  background: $orange;
+}
+
+.alarm {
+  background: $red;
+  border:1px solid $red;
+}
 
 .top-bar ul li h1 a{
   margin-top:.4em;
@@ -63,6 +75,10 @@ ul .right {
   background-image:url('otis-redding.png'); ;
 }
 
+#story-button {
+  margin-top:3px;
+}
+
 .panel {
   border: 1px solid #ddd;
   margin:0 0 20px 0;
@@ -87,7 +103,10 @@ li {
   padding-right:0;
 }
 
-
+.no-margin {
+  margin: 0;
+  border-top:0;
+}
 
 textarea#content_comment {
   color: #333;
@@ -98,7 +117,7 @@ textarea#content_comment {
 
 .comment-row {
   position: relative;
-  top: -85px;
+  top: -97px;
   box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.30);
 }
 
@@ -229,25 +248,34 @@ textarea#content_comment {
   text-align: center;
 }
 
-.up.active{
-  color: $green;
-}
-
-.down.active{
-  color: $red;
-}
-
 .icon:hover{
   color: #bbb;
 }
 
-#flash_alert {
-  position: absolute;
-  z-index: 100;
-  top: 138px;
-  right: 2em;
-  width: 200px;
+.up.active{
+  color: $green;
 }
+
+.down.active, .down:hover{
+  color: $red;
+}
+
+
+
+
+#flash_alert {
+  position: relative;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+}
+
+.error {
+  line-height: 1.3em;
+  background: #ccc;
+  color: #333;
+}
+
 .user-info {
   color: white;
   padding-right:10px;

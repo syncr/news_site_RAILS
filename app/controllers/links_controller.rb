@@ -18,13 +18,9 @@ class LinksController < ApplicationController
       flash[:notice] = "Link Created"
       redirect_to('/links')
     else
-      render('index')
+      render('new')
     end
   end
-
-  # def show
-  #   @link= Link.find(params[:id])
-  # end
 
   def edit
     @link = Link.find(params[:id])
@@ -43,7 +39,7 @@ class LinksController < ApplicationController
   def destroy
     @link = Link.find(params[:id])
     @link.destroy
-    flash[:alert]="Link Deleted"
+    flash[:notice]="Link Deleted"
     redirect_to('/links')
   end
 

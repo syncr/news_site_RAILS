@@ -2,36 +2,27 @@
   <div class='small-12'>
   <h1>Sign Up</h1>
 
+  <%= render('layouts/errors', :object => @user) %>
   <%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
-        <div data-alert class="alert-box">Your submission has problemz...</div>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <div class = "field">
-      <ul>
+      <ul class="no-margin">
         <li><%= f.label :email %></li>
         <li><%= f.text_field :email %></li>
       </ul>
     </div>
     <div class = "field">
-      <ul>
+      <ul class="no-margin">
         <li><%= f.label :password %></li>
         <li><%= f.password_field :password %></li>
       </ul>
     </div>
     <div class = "field">
-      <ul>
+      <ul class="no-margin">
         <li><%= f.label :password_confirmation %></li>
         <li><%= f.password_field :password_confirmation %></li>
       </ul>
     </div>
-    <div class = "actions"><%= f.submit "Sign Up" %></div>
+    <div class = "actions"><%= f.submit "Sign Up", :class => 'button tiny' %></div>
   <% end %>
   </div>
 </div>

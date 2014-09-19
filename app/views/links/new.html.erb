@@ -1,6 +1,7 @@
 <div class="row">
   <div class='small-12'>
     <h1>Create a new link!</h1>
+    <%= render('layouts/errors', :object => @link) %>
 
     <%= form_for(@link) do |f| %>
       <div class="form-group">
@@ -11,7 +12,7 @@
         <%= f.label :url %>
         <%= f.text_field :url, placeholder: "www.nytimes.com"%>
       </div>
-      <%= f.submit(class: "btn btn-primary") %>
+      <%= f.submit(class: "button") %>
     <% end %>
   </div>
 </div>
