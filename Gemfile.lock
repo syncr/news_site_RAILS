@@ -57,6 +57,8 @@ GEM
     execjs (2.2.1)
     font-awesome-sass (4.2.0)
       sass (~> 3.2)
+    font_assets (0.1.11)
+      rack
     foundation-rails (5.2.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -164,6 +166,7 @@ DEPENDENCIES
   capybara
   coffee-rails
   font-awesome-sass
+  font_assets
   foundation-rails
   jquery-rails
   launchy
