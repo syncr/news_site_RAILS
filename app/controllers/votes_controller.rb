@@ -13,3 +13,4 @@ class VotesController < ApplicationController
     @vote = Vote.new(params[:vote])
     # @vote =
   end
+end
