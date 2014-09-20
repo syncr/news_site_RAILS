@@ -25,7 +25,7 @@
                   <%= link_to "#{link.headline}", "http://#{link.url}", target: "_blank" %>
                 </h5>
                 <h6 class="subheader comment-time">
-                  <%= link_to "Time goes here", link_comments_path(link.id)%>
+                  Posted: <%= localize(link.created_at, :format => :short) %>
                 </h6>
               </div>
               <div class="column-container large-1 small-1 column">
