@@ -12,13 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
-
  */
 @import 'foundation_and_overrides';
 
 $body-font-family: 'Ubuntu', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-
 $placekitten: 82px;
 $story-button: 82px+10px;
 $blue: #2864A2;
@@ -153,7 +150,7 @@ textarea#content_comment {
 
 .comment-time {
   position: absolute;
-  bottom: -2px;
+  bottom: -px;
   border-radius: 5px;
   color: #777 !important;
   display: inline-block;
@@ -197,6 +194,7 @@ textarea#content_comment {
 }
 
 .vote-icons .icon {
+  font-size: 2em;
   text-align: center;
   display: block;
 }
@@ -232,16 +230,13 @@ textarea#content_comment {
   color: #bbb;
 }
 
-.up.active{
+.up.active {
   color: $green;
 }
 
-.down.active, .down:hover{
+.down.active {
   color: $red;
 }
-
-
-
 
 #flash_alert {
   position: relative;

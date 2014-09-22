@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt'
 gem 'foundation-rails'
-gem 'font-awesome-sass'
 gem 'font_assets'
 
 group :development do
