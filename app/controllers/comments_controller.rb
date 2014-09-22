@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :authorize, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @link = Link.find(params[:link_id])
     @comment = Comment.new({link_id: params[:link_id]})
@@ -15,11 +17,13 @@ class CommentsController < ApplicationController
     @link = Link.find(params[:link_id])
     @comment = current_user.comments.new(comment_params)
     @comments = @link.comments
+
     if @comment.save
       flash[:notice] = "Comment Created"
       redirect_to("/links/#{@link.id}/comments")
     else
-      render('index')
+      flash[:notice] = "Please login to post comments."
+      redirect_to ('/sessions/new')
     end
   end
 
