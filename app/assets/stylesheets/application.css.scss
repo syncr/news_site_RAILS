@@ -47,29 +47,29 @@ $topbar-bg-color: $green;
   width:100%;
   height: $placekitten*1.5;
   background: $green;
-  background-image:url('otis-redding.png'); ;
+  background-image: image-url('otis-redding.png');
 }
 
 .top-bar-section ul {
   background: $green;
-  background-image:url('otis-redding.png'); ;
+  background-image: image-url('otis-redding.png');
 
 }
 
 ul .right {
   background: $green;
-  background-image:url('otis-redding.png'); ;
+  background-image: image-url('otis-redding.png');
 }
 
 .top-bar-section li:not(.has-form) a:not(.button){
   background: $green;
-  background-image:url('otis-redding.png'); ;
+  background-image: image-url('otis-redding.png');
   font-size: 1em;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
   background: #1b926c;
-  background-image:url('otis-redding.png'); ;
+  background-image: image-url('otis-redding.png');
 }
 
 #story-button {
@@ -251,7 +251,7 @@ textarea#content_comment {
   margin: 1em 0;
 }
 
-@media #{$large-up} { 
+@media #{$large-up} {
   .comment-row {
     top: -97px;
     box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.30);
